@@ -5,8 +5,22 @@ function adicionar() {
     
     //Recuperando valores do html
     let produto = document.getElementById('produto').value;
-    let nomeDoProduto = produto.split('-')[0];
     let quantidade = document.getElementById('quantidade').value;
+  
+
+    // Verificar se o produto selecionado é válido
+    if (!produto || produto.trim() === "") {
+        alert("Selecione um produto válido.");
+        return;
+    }
+
+    // Verificar se a quantidade inserida é válida
+    if (isNaN(quantidade) || quantidade <= 0) {
+        alert("Insira uma quantidade válida.");
+        return;
+    }
+
+    let nomeDoProduto = produto.split('-')[0];
     let valorDaUnidade = produto.split('R$')[1];
     
     //Calculando preço e subtotal
