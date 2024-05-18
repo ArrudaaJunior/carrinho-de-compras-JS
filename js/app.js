@@ -1,3 +1,7 @@
+let valorTotal = 0;
+document.getElementById('lista-produtos').innerHTML = '';
+document.getElementById('valor-total').textContent = 'R$ 0';
+
 function adicionar() {
     
     //Recuperando valores do html
@@ -17,6 +21,10 @@ function adicionar() {
     </section>`;
 
     //Atualizando o valor total
+    valorTotal = valorTotal + preco;
+    let total = document.getElementById('valor-total');
+    total.textContent = `R$ ${valorTotal}`;
+    document.getElementById('quantidade').value = 0;
 }
 
 function limpar() {
